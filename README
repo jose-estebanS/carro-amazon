@@ -1,0 +1,13 @@
+
+carrito de compras amazon
+
+rutas:
+-get /carro muestra todos los elementos del carrito de compras
+-post /carro/producto/:producto agrega un nuevo producto al carrito de compras, el producto debe ser un json
+-delete /carro vacia el carrito de compras
+-delete /carro/productos/:id elimina un producto del carrito de compras proporcionando un id
+-get /almacen muestra todos los elementos del almacen
+-get /almacen/:filtro/:keyword' muestra los elementos que coicidan con el filtro, el filtro es el nombre de un campo 
+y el keyboard es la palabra o numero que se va a comparar para ver si hay coincidencias
+-post /pagar vacía el carrito de compras, resta la cantidad de los elementos que estaban en el carrito a los que estan 
+en el almacen siempre y cuando la cantidad de los elementos del carrito no sea mayor al del almacen

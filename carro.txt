@@ -1,0 +1,1 @@
+[{"id":1,"nombre":"Xiaomi Redmi Note 7","precio":"3700","categoria":"telefon?a","cantidad":2}]
