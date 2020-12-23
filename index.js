@@ -38,7 +38,7 @@ app.delete('/carro', (req, res) => {
     res.send('El carrito de compras está vacío');
 })
 
-app.delete('/carro/productos/:id/', (req, res) => {
+app.delete('/carro/productos/:id', (req, res) => {
     let carro = fs.readFileSync('./carro.txt', 'utf8');
     let productos = JSON.parse(carro);
     
@@ -56,6 +56,38 @@ app.get('/almacen', (req, res) => {
     let almacen = fs.readFileSync('./almacen.txt', 'utf8');
     let producto = JSON.parse(almacen);
     res.send(producto);
+})
+
+app.post('/almacen/producto/:producto', (req, res) => {
+    let almacen = fs.readFileSync('./almacen.txt', 'utf8');
+    let productos = JSON.parse(almacen);
+    
+    let claveProducto = JSON.parse(req.params.producto);
+    const index = productos.findIndex(producto => producto.id === claveProducto.id);
+    if(index === -1){
+        productos.push(claveProducto);
+    }else{
+        productos.splice(index, 1, claveProducto);
+    }
+
+    fs.writeFileSync('./almacen.txt', '');
+    fs.writeFileSync('./almacen.txt', JSON.stringify(productos)); 
+
+    res.send('Se añadió al almacen éxitosamente');
+})
+
+app.delete('/almacen/productos/:id', (req, res) => {
+    let almacen = fs.readFileSync('./almacen.txt', 'utf8');
+    let productos = JSON.parse(almacen);
+    
+    let claveProducto = parseInt(req.params.id);
+    const index = productos.findIndex(producto => producto.id === claveProducto);
+
+    productos.splice(index, 1);
+
+    fs.writeFileSync('./almacen.txt', '');
+    fs.writeFileSync('./almacen.txt', JSON.stringify(productos));
+    res.send('producto eliminado del carrito');
 })
 
 app.get('/almacen/:filtro/:keyword', (req, res) => {

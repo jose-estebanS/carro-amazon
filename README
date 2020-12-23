@@ -7,6 +7,8 @@ rutas:
 -delete /carro vacia el carrito de compras
 -delete /carro/productos/:id elimina un producto del carrito de compras proporcionando un id
 -get /almacen muestra todos los elementos del almacen
+-post /almacen/producto/:producto agrega un nuevo producto al almacen, el producto debe ser un objeto json
+-delete /almacen/productos/:id elimina un producto del almacen proporcioando un id
 -get /almacen/:filtro/:keyword' muestra los elementos que coicidan con el filtro, el filtro es el nombre de un campo 
 y el keyboard es la palabra o numero que se va a comparar para ver si hay coincidencias
 -post /pagar vacía el carrito de compras, resta la cantidad de los elementos que estaban en el carrito a los que estan 

@@ -1,1 +1,1 @@
-[{"id":1,"nombre":"Xiaomi Redmi Note 7","precio":"3700","categoria":"telefon�a","cantidad":23},{"id":2,"nombre":"Ipad 8th Generation 128gb","precio":"11700","categoria":"tablet","cantidad":20}]
+[{"id":1,"nombre":"Xiaomi Redmi Note 7","precio":3700,"categoria":"telefon?a","cantidad":23},{"id":2,"nombre":"Ipad 8th Generation 128gb","precio":11700,"categoria":"tablet","cantidad":20},{"id":3,"nombre":"Playera Led Zeppelin","precio":250,"categoria":"ropa","cantidad":3}]
